@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img src="./images/product-1.jpg"  width="200px" id="product-1 alt="photoshop"></li>
+            <li><img src="./images/product-4.jpg"  width="200px" id="product-4 alt="photoshop"></li>
+            <li><img src="./images/product-6.jpg"  width="200px" id="product-6" alt="photoshop"></li>
+            <li><img src="./images/user-1.png"  width="200px" id="user-1" alt="photoshop"></li>
+            <li><img src="./images/user-2.png"  width="200px" id="user-2 "alt="photoshop"></li>
+            <li><a href="https://google.com" id="google" style="color:aliceblue;">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('product-6').onclick = function (){
+    //     alert('product-6 clicked')
+    // }
+    // document.getElementById('product-6').addEventListener('click', function (e){
+    //     console.log('product-6 clicked again')
+    //     e.stopPropagation()
+    // },false)
+
+    // document.getElementById('images').addEventListener('click', function (e){
+    //     console.log('clicked inside ul')
+    // },false)
+
+    // document.getElementById('google').addEventListener('click', function (e){
+    //     e.preventDefault()
+    //     console.log('Google clicked');
+    // },false)
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    })
+</script>
+</html>

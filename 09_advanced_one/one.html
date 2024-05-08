@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+
+Sets the request method, request URL, and synchronous flag.
+
+Throws a "SyntaxError" DOMException if either method is not a valid method or url cannot be parsed.
+
+Throws a "SecurityError" DOMException if method is a case-insensitive match for `CONNECT`, `TRACE`, or `TRACK`.
+
+Throws an "InvalidAccessError" DOMException if async is false, current global object is a Window object, and the timeout attribute is not zero or the responseType attribute is not the empty string.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET',requestUrl)
+    xhr.onreadystatechange = function (){ 
+        console.log(xhr.readyState);
+        if (xhr.readyState == 4) {
+            const data = JSON.parse(this.responseText);
+            console.log(data.followers);
+        }
+    }
+    xhr.send()
+
+</script>
+</html>

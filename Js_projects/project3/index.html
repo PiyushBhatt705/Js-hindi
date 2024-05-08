@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .home{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+    color: black;
+    background-color: aliceblue;
+    width: 6rem;
+    height: 3rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.youtube{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+    color: black;
+    background-color: aliceblue;
+    width: 10rem;
+    height: 3rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 1px;
+    background-color: rgb(231, 231, 231);
+    height: 5rem;
+    width: 95%;
+    gap: 3rem;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.text{
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    background-color: #212121;
+    color: #fff;
+}
+.center{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#clock{
+    font-size: 40px;
+    background-color: orange;
+    padding: 20px 50px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+    </style>
+    
+</head>
+<body>
+    <nav class="nav-container">
+        <a href="/" aria-current="page" class="home">Home</a>
+        <a target="_blank" href="https://www.youtube.com/@chaiaurcode" class="youtube">Youtube Channel</a>
+    </nav>
+    <div class="center">
+        <div id="banner"><span>Your Local Time</span></div>
+        <div id="clock"></div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

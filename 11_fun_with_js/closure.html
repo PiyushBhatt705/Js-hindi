@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="Orange">Orange</button>
+    <button id="Green">Green</button>
+</body>
+<script>
+    // function init(){
+    // let name = 'Mozilla'
+
+    //     function displayName(){
+    //         console.log(name);
+    //     };
+    //     displayName()
+    // };
+    // init()
+
+    // function outer(){
+    //     let name = "Piyush"
+    //     // console.log(secret); => Error
+    //     function inner(){
+    //         let secret = '123'
+    //         console.log(name);
+    //     }
+    //     function innerTwo(){
+    //         // console.log(secret); => Error
+
+    //         console.log(name);
+    //     }
+    //     inner()
+    //     innerTwo()
+    // }
+    // outer()
+
+    function makeFunc(){
+    let name = 'Mozilla'
+
+        function displayName(){
+            console.log(name);
+        };
+        return displayName
+    };
+
+    const myFunc = makeFunc();
+    myFunc()
+</script>
+
+<script>
+    // document.getElementById('Orange').addEventListener('click', function(){
+    //     document.body.style.backgroundColor ="orange"
+    // })
+
+    // document.getElementById('Green').addEventListener('click', function(){
+    //     document.body.style.backgroundColor ="Green"
+    // })
+
+    function colorHandler(color){
+        // document.body.style.backgroundColor =`${color}`
+        return function (){
+         document.body.style.backgroundColor =`${color}`
+        }
+    };
+
+    document.getElementById('Orange').onclick = colorHandler('orange')
+    document.getElementById('Green').onclick = colorHandler('green')
+
+</script>
+</html>
